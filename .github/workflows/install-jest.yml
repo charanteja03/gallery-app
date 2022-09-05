@@ -1,5 +1,8 @@
 name: install-jest
-on: [push]
+on: 
+  push:
+  workflow-dispatch:
+
 jobs:
   check-jest-version:
     runs-on: ubuntu-latest
