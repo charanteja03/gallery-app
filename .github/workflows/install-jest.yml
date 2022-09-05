@@ -16,4 +16,10 @@ jobs:
           TEST_SECRET: ${{ secrets.TEST_REPO_SECRET }}
         run: |
           echo $TEST_SECRET
-      - uses: ./actions/hello-world-action
+      - name: Custom JavaScript action
+        uses: ./actions/hello-world-action/action.yml
+        id: greet
+        with:
+          who-to-greet
+      - name: Get the output from custom actions
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
