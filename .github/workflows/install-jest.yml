@@ -16,3 +16,4 @@ jobs:
           TEST_SECRET: ${{ secrets.TEST_REPO_SECRET }}
         run: |
           echo $TEST_SECRET
+      - uses: ./actions/hello-world-action
