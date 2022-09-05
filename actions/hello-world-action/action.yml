@@ -13,4 +13,6 @@ runs:
   main: 'index.js'
   steps:
     - run: npm ci
+      shell: bash
     - run: npm i
+      shell: bash
