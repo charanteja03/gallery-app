@@ -9,10 +9,5 @@ outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
-  using: 'composite'
+  using: 'node16'
   main: 'dist/index.js'
-  steps:
-    - run: npm ci
-      shell: bash
-    - run: npm i
-      shell: bash
