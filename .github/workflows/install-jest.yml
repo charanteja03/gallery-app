@@ -11,7 +11,8 @@ jobs:
       - run: npm install -g jest
       - run: jest --version
       - name: Printing a secret
-        with: 
+        shell: bash
+        env: 
           super_secret: ${{super.TEST_REPO_SECRET}}
-      - run: |
-          echo %super_secret%
+        run: |
+          echo "$SUPER_SECRET"
