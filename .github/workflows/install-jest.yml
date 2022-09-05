@@ -1,7 +1,7 @@
 name: install-jest
 on: [push]
 jobs:
-  check-bats-version:
+  check-jest-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -10,12 +10,25 @@ jobs:
           node-version: '14'
       - run: npm install -g jest
       - run: jest --version
+  print-a-test-secret:
+    runs-on: ubuntu-latest
+    steps:
       - name: Printing a secret
         shell: bash
         env: 
           TEST_SECRET: ${{ secrets.TEST_REPO_SECRET }}
         run: |
           echo $TEST_SECRET
+  run-custom-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: |
+          npm ci
+          npm install
       - name: Custom JavaScript action
         uses: ./actions/hello-world-action
         id: greet
