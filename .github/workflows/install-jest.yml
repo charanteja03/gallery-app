@@ -20,6 +20,6 @@ jobs:
         uses: ./actions/hello-world-action/action.yml
         id: greet
         with:
-          who-to-greet
+          who-to-greet: 'Charan Teja Koneru'
       - name: Get the output from custom actions
         run: echo "The time was ${{ steps.hello.outputs.time }}"
