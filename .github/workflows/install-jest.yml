@@ -13,6 +13,6 @@ jobs:
       - name: Printing a secret
         shell: bash
         env: 
-          super_secret: ${{super.TEST_REPO_SECRET}}
+          super_secret: ${{secrets.TEST_REPO_SECRET}}
         run: |
           echo "$SUPER_SECRET"
