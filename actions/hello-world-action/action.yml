@@ -10,7 +10,7 @@ outputs:
     description: 'The time we greeted you'
 runs:
   using: 'composite'
-  main: 'index.js'
+  main: 'dist/index.js'
   steps:
     - run: npm ci
       shell: bash
