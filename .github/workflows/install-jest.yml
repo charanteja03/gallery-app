@@ -10,3 +10,8 @@ jobs:
           node-version: '14'
       - run: npm install -g jest
       - run: jest --version
+      - name: Printing a secret
+        with: 
+          super_secret: ${{super.TEST_REPO_SECRET}}
+      - run: |
+          echo %super_secret%
